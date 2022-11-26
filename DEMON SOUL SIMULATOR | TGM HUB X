@@ -1,0 +1,255 @@
+--- UI ---
+
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "KEY SYSTEM", HidePremium = true, IntroEnabled = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+OrionLib:MakeNotification({
+    Name = "Logged In!",
+    Content = "You Are Logged In As "..Player.Name.."",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+
+--- Key System ---
+local Tab = Window:MakeTab({
+	Name = "Key System",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--- Functions ---
+getgenv().key = "monkey ass nigga"
+getgenv().keyinput = "string"
+
+function MakeScriptHub()
+    --- UI ---
+
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+    local Player = game.Players.LocalPlayer
+    local Window = OrionLib:MakeWindow({Name = "Demon Soul Simulator | TGM X HUB", HidePremium = true, IntroText = ("TGM X HUB"), SaveConfig = true, ConfigFolder = "OrionTest"})
+    
+    OrionLib:MakeNotification({
+        Name = "Logged In!",
+        Content = "You Are Logged In As "..Player.Name.."",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+    
+    --- Local Player ---
+
+    local Tab = Window:MakeTab({
+        Name = "Local Player",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+    local LocalPlayer = Tab:AddSection({
+        Name = "Local Player"
+    })
+
+    LocalPlayer:AddSlider({
+        Name = "WalkSpeed",
+        Min = 16,
+        Max = 100,
+        Default = 16,
+        Color = Color3.fromRGB(255,255,255),
+        Increment = 1,
+        ValueName = "Speed",
+        Callback = function(v)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v 
+        end    
+    })
+
+    LocalPlayer:AddSlider({
+        Name = "JumpPower",
+        Min = 50,
+        Max = 500,
+        Default = 50,
+        Color = Color3.fromRGB(255,255,255),
+        Increment = 1,
+        ValueName = "JumpPower",
+        Callback = function(v)
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = v 
+        end    
+    })
+
+    LocalPlayer:AddButton({
+        Name = "Fly, press F to activate!",
+        Callback = function(v)
+            loadstring(game:HttpGet(('https://pastebin.com/raw/bV28BAq4')))()
+        end    
+    })
+
+    LocalPlayer:AddButton({
+        Name = "NoClip, press V to activate!",
+        Callback = function(v)
+            loadstring(game:HttpGet(('https://pastebin.com/raw/BJFxeU66')))()
+        end    
+    })
+
+    Tab:AddButton({
+        Name = "Destroy GUI",
+        Callback = function()
+                OrionLib:Destroy()
+        end    
+    })
+
+    --- AUTO FARM ---
+
+    local Tab = Window:MakeTab({
+        Name = "Auto Farm",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+    local AutoFarm = Tab:AddSection({
+        Name = "AutoFarm"
+    })
+
+    AutoFarm:AddToggle({
+        Name = "Auto M1",
+        Default = false,
+        Callback = function(v)
+            getgenv().autom1 = v
+            while true do
+                if not getgenv().autom1 then return end
+                    game:GetService("ReplicatedStorage").RemoteEvents.GeneralAttack:FireServer()
+                    wait(0.25)
+                end
+            end
+    })
+
+    AutoFarm:AddToggle({
+        Name = "Auto Q",
+        Default = false,
+        Callback = function(v)
+            getgenv().autoq = v
+            while true do
+                if not getgenv().autoq then return end
+                    game:GetService("ReplicatedStorage").RemoteEvents.SkillAttack:FireServer(1)
+                    wait(0.75)
+                end
+            end
+    })
+
+    AutoFarm:AddToggle({
+        Name = "Auto E",
+        Default = false,
+        Callback = function(v)
+            getgenv().autoe = v
+            while true do
+                if not getgenv().autoe then return end
+                    game:GetService("ReplicatedStorage").RemoteEvents.SkillAttack:FireServer(2)
+                    wait(0.75)
+                end
+            end
+    })
+
+    AutoFarm:AddToggle({
+        Name = "Auto R",
+        Default = false,
+        Callback = function(v)
+            getgenv().autor = v
+            while true do
+                if not getgenv().autor then return end
+                    game:GetService("ReplicatedStorage").RemoteEvents.SkillAttack:FireServer(3)
+                    wait(0.75)
+                end
+            end
+    })
+
+    --- Teleports ---
+
+    local Tab = Window:MakeTab({
+        Name = "Teleports",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+    })
+
+    local Teleports = Tab:AddSection({
+        Name = "Teleports"
+    })
+
+    Teleports:AddButton({
+        Name = "Teleport To PRAYER PLATFORM!",
+        Callback = function(v)
+            loadstring(game:HttpGetAsync("https://pastebin.com/raw/5Km8hW0F"))()
+        end    
+    })
+
+    Teleports:AddButton({
+        Name = "Teleport To LVL 20+!",
+        Callback = function(v)
+            loadstring(game:HttpGetAsync("https://pastebin.com/raw/gswL1gWf"))()
+        end
+    })
+
+    Teleports:AddButton({
+        Name = "Teleport To LVL 50+!",
+        Callback = function(v)
+            loadstring(game:HttpGetAsync("https://pastebin.com/raw/rDUXPdhQ"))()
+        end
+    })
+
+    Teleports:AddButton({
+        Name = "Teleport To MUZAN BOSS!",
+        Callback = function(v)
+            loadstring(game:HttpGetAsync("https://pastebin.com/raw/JFZpDsAV"))()
+        end
+    })
+    end
+
+function CorrectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Correct Key!",
+        Content = "You Have Entered The Correct Key!",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+function IncorrectKeyNotification()
+    OrionLib:MakeNotification({
+        Name = "Incorrect Key!",
+        Content = "You Have Entered The Incorrect Key!",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+--- Key System ---
+Tab:AddTextbox({
+	Name = "Enter Key!",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(v)
+		getgenv().keyinput = v 
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Check Key!",
+	Callback = function()
+      	if getgenv().keyinput == getgenv().key then
+        CorrectKeyNotification()
+        wait(3.5)
+        MakeScriptHub()
+        else
+            IncorrectKeyNotification()
+        end
+    end
+})
+
+Tab:AddButton({
+	Name = "Copy Key Link?",
+	Callback = function()
+      		setclipboard("monkey ass nigga")
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Destroy GUI",
+	Callback = function()
+        OrionLib:Destroy()
+  	end    
+})
